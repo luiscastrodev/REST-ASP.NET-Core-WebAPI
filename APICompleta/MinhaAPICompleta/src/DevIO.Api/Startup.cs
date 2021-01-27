@@ -38,6 +38,9 @@ namespace DevIO.Api
 
             services.AddControllers();
 
+            //remove os retorno padrao do WEBAPI ModelState 
+            services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+
             //configuracoes customizadas IRepository entre outras
             services.ResolveDependencies();
         }
