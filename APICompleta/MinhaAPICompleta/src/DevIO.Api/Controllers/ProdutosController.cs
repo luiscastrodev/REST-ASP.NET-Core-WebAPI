@@ -22,7 +22,7 @@ namespace DevIO.Api.Controllers
         private readonly IProdutoService _produtoService;
 
         public ProdutosController(IMapper mapper,
-                                   IProdutoRepository produtoRepository, 
+                                   IProdutoRepository produtoRepository,
                                    IProdutoService produtoService,
                                    INotificador notificador)
             : base(notificador)
@@ -61,8 +61,31 @@ namespace DevIO.Api.Controllers
             return produto;
         }
 
+        //Enviando o arquivo fisico
+        [HttpPost("Adicionar")]
+        public async Task<ActionResult<ProdutoViewModel>> AdicionarAlternativo(ProdutoImagemViewModel produtoViewModel)
+        {
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            var imgPrefixo = Guid.NewGuid() + "_";
+
+            if (!await UploadArquivoAlternativo(produtoViewModel.ImagemUpload, imgPrefixo))
+            {
+                return CustomResponse();
+            }
+
+            produtoViewModel.Imagem = imgPrefixo + produtoViewModel.ImagemUpload.FileName;
+
+            var produto = _mapper.Map<Produto>(produtoViewModel);
+            await _produtoRepository.Adicionar(produto);
 
 
+            return CustomResponse(produtoViewModel);
+        }
+
+
+
+        //Arquivo base 64
         [HttpPost]
         public async Task<ActionResult<ProdutoViewModel>> Adicionar(ProdutoViewModel produtoViewModel)
         {
@@ -84,6 +107,46 @@ namespace DevIO.Api.Controllers
             return CustomResponse(produtoViewModel);
         }
 
+        [HttpPut("{id:guid}")]
+        public async Task<ActionResult<ProdutoViewModel>> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
+        {
+            if (id != produtoViewModel.Id)
+            {
+                NotificarError("O Id Informado não é valido");
+                return CustomResponse(produtoViewModel);
+            }
+
+
+            var produtoAtualizacao = await ObterProduto(id);
+            produtoViewModel.Imagem = produtoViewModel.Imagem;
+
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            if(produtoViewModel.ImagemUpload != null)
+            {
+                var iamgemNome = Guid.NewGuid() + "_" + produtoViewModel.Imagem;
+
+                if (!UploadArquivo(produtoViewModel.ImagemUpload, iamgemNome))
+                {
+                    return CustomResponse();
+                }
+                produtoViewModel.Imagem = iamgemNome;
+
+            }
+
+            produtoAtualizacao.Nome = produtoViewModel.Nome;
+            produtoAtualizacao.Nome = produtoViewModel.Descricao;
+            produtoAtualizacao.Valor = produtoViewModel.Valor;
+            produtoAtualizacao.Ativo = produtoViewModel.Ativo;
+
+
+            var produto = _mapper.Map<Produto>(produtoAtualizacao);
+            await _produtoRepository.Atualizar(produto);
+
+
+            return CustomResponse(produtoViewModel);
+        }
+
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> Excluir(Guid id)
         {
@@ -100,11 +163,11 @@ namespace DevIO.Api.Controllers
 
         }
 
-
-        private bool UploadArquivo (string arquivo, string imgNome)
+        //base64
+        private bool UploadArquivo(string arquivo, string imgNome)
         {
 
-            if(string.IsNullOrEmpty(arquivo))
+            if (string.IsNullOrEmpty(arquivo))
             {
                 //ModelState.AddModelError(string.Empty, "Forneça uma imagem para este produto");
                 NotificarError("Forneça uma imagem para este produto");
@@ -115,7 +178,7 @@ namespace DevIO.Api.Controllers
 
             if (System.IO.File.Exists(filepath))
             {
-               // ModelState.AddModelError(string.Empty, "Já existe um arquivo com este nome!");
+                // ModelState.AddModelError(string.Empty, "Já existe um arquivo com este nome!");
                 NotificarError("Já existe um arquivo com este nome!");
 
                 return false;
@@ -125,6 +188,43 @@ namespace DevIO.Api.Controllers
 
             return true;
         }
+
+        //arquivo fisico
+        private async Task<bool> UploadArquivoAlternativo(IFormFile arquivo, string imgPrefixo)
+        {
+
+            if (arquivo == null || arquivo.Length <= 0)
+            {
+                //ModelState.AddModelError(string.Empty, "Forneça uma imagem para este produto");
+                NotificarError("Forneça uma imagem para este produto");
+                return false;
+            }
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/app/demo-wrbapi/src/assets", imgPrefixo + arquivo.FileName);
+
+            if (System.IO.File.Exists(path))
+            {
+                // ModelState.AddModelError(string.Empty, "Já existe um arquivo com este nome!");
+                NotificarError("Já existe um arquivo com este nome!");
+
+                return false;
+            }
+            using (var stream = new FileStream(path, FileMode.Create)) {
+                await arquivo.CopyToAsync(stream);
+            }
+
+            return true;
+        }
+
+
+        //teste
+        [RequestSizeLimit(400000000)]
+        [HttpPost("imagem")]
+        public async Task<ActionResult> AdicionarImagem(IFormFile file)
+        {
+            return Ok();
+        }
+
 
     }
 }
