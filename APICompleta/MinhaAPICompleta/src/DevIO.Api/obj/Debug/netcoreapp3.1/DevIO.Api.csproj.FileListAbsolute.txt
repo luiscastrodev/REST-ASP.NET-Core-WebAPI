@@ -54,3 +54,5 @@ D:\src\Projetos\REST ASP.NET Core WebAPI\APICompleta\MinhaAPICompleta\src\DevIO.
 D:\src\Projetos\REST ASP.NET Core WebAPI\APICompleta\MinhaAPICompleta\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.dll
 D:\src\Projetos\REST ASP.NET Core WebAPI\APICompleta\MinhaAPICompleta\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.pdb
 D:\src\Projetos\REST ASP.NET Core WebAPI\APICompleta\MinhaAPICompleta\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.genruntimeconfig.cache
+D:\src\Projetos\REST ASP.NET Core WebAPI\APICompleta\MinhaAPICompleta\src\DevIO.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\src\Projetos\REST ASP.NET Core WebAPI\APICompleta\MinhaAPICompleta\src\DevIO.Api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
