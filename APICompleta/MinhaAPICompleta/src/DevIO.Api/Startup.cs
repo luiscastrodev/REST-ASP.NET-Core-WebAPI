@@ -36,10 +36,8 @@ namespace DevIO.Api
             //Configuracao Automapper
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddControllers();
-
-            //remove os retorno padrao do WEBAPI ModelState 
-            services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+            //configuracao methodos
+            services.WebApiConfig();
 
             //configuracoes customizadas IRepository entre outras
             services.ResolveDependencies();
@@ -53,16 +51,8 @@ namespace DevIO.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            app.UseMvcConfigurarion();
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
         }
     }
 }
