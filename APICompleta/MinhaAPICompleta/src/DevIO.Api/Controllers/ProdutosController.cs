@@ -70,7 +70,7 @@ namespace DevIO.Api.Controllers
 
             var iamgemNome = Guid.NewGuid() + "_" + produtoViewModel.Imagem;
 
-            if (!UploadArquivo(produtoViewModel.ImagemUpload, produtoViewModel.Imagem))
+            if (!UploadArquivo(produtoViewModel.ImagemUpload, iamgemNome))
             {
                 return CustomResponse();
             }
@@ -111,7 +111,7 @@ namespace DevIO.Api.Controllers
                 return false;
             }
 
-            var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", imgNome);
+            var filepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", imgNome + ".png");
 
             if (System.IO.File.Exists(filepath))
             {
