@@ -20,13 +20,13 @@ namespace DevIO.Api.Configuration
             services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
             //remove cors em dev
-            services.AddCors(options =>
+           /* services.AddCors(options =>
             {
                 options.AddPolicy("Development", builder => builder.AllowAnyOrigin()
                          .AllowAnyMethod()
                          .AllowAnyHeader()
                          .AllowCredentials());
-                     });
+                     });*/
 
             return services;
         }
@@ -34,13 +34,8 @@ namespace DevIO.Api.Configuration
 
         public static IApplicationBuilder UseMvcConfigurarion(this IApplicationBuilder app)
         {
-            app.UseHttpsRedirection();
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseCors("Development");
+            //app.UseCors("Development");
 
             app.UseEndpoints(endpoints =>
             {

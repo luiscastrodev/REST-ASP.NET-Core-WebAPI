@@ -33,6 +33,8 @@ namespace DevIO.Api
             services.AddDbContext<MeuDbContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddIdentityConfiguration(Configuration);
+
             //Configuracao Automapper
             services.AddAutoMapper(typeof(Startup));
 
@@ -50,6 +52,12 @@ namespace DevIO.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseMvcConfigurarion();
 
