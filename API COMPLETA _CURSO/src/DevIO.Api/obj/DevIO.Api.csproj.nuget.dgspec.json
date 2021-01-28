@@ -1,0 +1,253 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Api\\DevIO.Api.csproj": {}
+  },
+  "projects": {
+    "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Api\\DevIO.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Api\\DevIO.Api.csproj",
+        "projectName": "DevIO.Api",
+        "projectPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Api\\DevIO.Api.csproj",
+        "packagesPath": "C:\\Users\\PC-KLSOFT\\.nuget\\packages\\",
+        "outputPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC-KLSOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
+            "projectReferences": {
+              "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj": {
+                "projectPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj"
+              },
+              "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Data\\DevIO.Data.csproj": {
+                "projectPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Data\\DevIO.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
+          "dependencies": {
+            "AspNetCore.HealthChecks.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Elmah.Io.AspNetCore": {
+              "target": "Package",
+              "version": "[3.6.63, )"
+            },
+            "Elmah.Io.AspNetCore.HealthChecks": {
+              "target": "Package",
+              "version": "[3.7.78-pre, )"
+            },
+            "Elmah.Io.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.4.38, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "aspnetcore.healthchecks.ui": {
+              "target": "Package",
+              "version": "[2.2.28, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectName": "DevIO.Business",
+        "projectPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "packagesPath": "C:\\Users\\PC-KLSOFT\\.nuget\\packages\\",
+        "outputPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC-KLSOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Data\\DevIO.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Data\\DevIO.Data.csproj",
+        "projectName": "DevIO.Data",
+        "projectPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Data\\DevIO.Data.csproj",
+        "packagesPath": "C:\\Users\\PC-KLSOFT\\.nuget\\packages\\",
+        "outputPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC-KLSOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
+            "projectReferences": {
+              "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj": {
+                "projectPath": "D:\\src\\Projetos\\REST ASP.NET Core WebAPI\\API COMPLETA _CURSO\\src\\DevIO.Business\\DevIO.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
